@@ -1,0 +1,17 @@
+<div class="education-container">
+    <h2 class="page-title mat-headline-large">Education</h2>
+
+  <div class="education-grid">
+    <mat-card *ngFor="let edu of educationHistory" class="education-card">
+      <mat-card-title>{{ edu.institution }}</mat-card-title>
+      <mat-card-subtitle>{{ edu.degree }} • {{ edu.duration }}</mat-card-subtitle>
+      <mat-card-content>
+        <p>{{ edu.summary }}</p>
+
+        <mat-chip-listbox>
+          <mat-chip *ngFor="let item of edu.highlights">{{ item }}</mat-chip>
+        </mat-chip-listbox>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

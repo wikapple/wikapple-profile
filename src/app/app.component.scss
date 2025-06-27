@@ -1,0 +1,114 @@
+/* Layout Structure */
+.sidenav-container {
+  min-height: 100dvh; // Dynamic Viewport Height
+  display: flex;
+  flex-direction: column;
+}
+
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  height: 64px;
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+}
+
+.main-content.no-padding {
+  padding: 0;
+}
+
+footer, app-footer {
+  flex-shrink: 0;
+}
+
+/* Sidenav */
+.sidenav {
+  width: 250px;
+  background-color: #2E4A3D;
+  color: white;
+}
+
+/* Navigation and Icons */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 3px;
+}
+
+.logo-icon {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Navigation Links */
+.nav-links a {
+  color: white;
+  margin-left: 1rem;
+}
+
+.active {
+  font-weight: 600;
+  color: #2E4A3D;
+  border-bottom: 0.5px solid currentColor;
+}
+
+/* Responsive */
+.hide-on-mobile {
+  display: flex;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .show-on-mobile {
+    display: block;
+  }
+
+  .logo-icon {
+    height: 40px;
+    width: 40px;
+  }
+  .main-content {
+      padding: 0;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+  }
+}
+app-footer {
+  padding-bottom: env(safe-area-inset-bottom);
+}

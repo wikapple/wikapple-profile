@@ -1,0 +1,48 @@
+<div class="contact-container">
+    <h2 class="page-title mat-headline-large">Contact</h2>
+
+    <div class="contact-links">
+        <a href="https://www.linkedin.com/in/william-k-applegate/" target="_blank" rel="noopener">
+            <button mat-stroked-button>
+                <i class="fab fa-linkedin fa-xl"></i> LinkedIn
+            </button>
+        </a>
+
+        <a href="https://github.com/wikapple" target="_blank" rel="noopener">
+            <button mat-stroked-button>
+                <i class="fab fa-github fa-xl"></i> GitHub
+            </button>
+        </a>
+
+        <a href="mailto:wikapple@gmail.com" aria-label="Email">
+            <button mat-stroked-button>
+                <i class="fa-solid fa-envelope fa-xl"></i> wikapple&#64;gmail.com
+            </button>
+        </a>
+    </div>
+    <div class="contact-form-container">
+        <h1>Let’s Get in Touch</h1>
+        <p>You can reach me via the form below, or at <a href="mailto:wikapple@gmail.com" aria-label="Email"><strong>wikapple&#64;gmail.com</strong></a>.</p>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required type="email" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Message</mat-label>
+                <textarea matInput formControlName="message" rows="5" required></textarea>
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" type="submit" [disabled]="!contactForm.valid">
+                Send Message
+            </button>
+        </form>
+    </div>
+</div>

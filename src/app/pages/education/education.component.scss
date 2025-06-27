@@ -1,0 +1,36 @@
+.education-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.education-grid {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem 0;
+
+
+}
+
+.education-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  padding: .5rem;
+  background-color: var(--surface-color, #2d3130);
+  color: var(--text-color, #f4fff7);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+@for $i from 1 through 10 {
+  .education-card:nth-child(#{$i}) {
+    animation-delay: #{0.05 * $i}s;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

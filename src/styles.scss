@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use '../dark_theme-colors' as my-theme; // location of generated file
+@include mat.all-component-typographies();
+@include mat.core();
+
+html {
+  color-scheme: dark;
+  @include mat.theme((color: (primary: my-theme.$primary-palette,
+        tertiary: my-theme.$tertiary-palette ),
+      typography: (plain-family: Nunito Sans,
+        brand-family: Inter,
+      ),
+      density: 0));
+}
+
+body {
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+
+}
+
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  overscroll-behavior-y: none;
+}
+
+mat-sidenav-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; // enables smooth scroll on iOS
+}
+
+.page-title {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}

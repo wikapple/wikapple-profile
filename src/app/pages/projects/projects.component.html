@@ -1,0 +1,27 @@
+<div class="projects-container">
+    <h2 class="page-title mat-headline-large">Projects</h2>
+
+  <div class="project-grid">
+    <mat-card *ngFor="let project of projects" class="project-card">
+      <mat-card-title>{{ project.title }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ project.description }}</p>
+        @if (project.imgUrl != null) {
+          <img mat-card-image class="card-img" src="{{project.imgUrl}}" alt="image of {{project.title}} project">
+        }
+        <mat-chip-listbox>
+          <mat-chip *ngFor="let tech of project.technologies">{{ tech }}</mat-chip>
+        </mat-chip-listbox>
+
+        <div class="project-links" *ngIf="project.githubUrl || project.liveDemoUrl">
+          <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank">
+            <button mat-stroked-button color="primary">GitHub</button>
+          </a>
+          <a *ngIf="project.liveDemoUrl" [href]="project.liveDemoUrl" target="_blank">
+            <button mat-stroked-button color="accent">Live Demo</button>
+          </a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
