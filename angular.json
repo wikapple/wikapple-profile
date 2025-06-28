@@ -30,9 +30,7 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/assets",
-              "src/favicon_with_bg.ico",
-              "src/circuit-icon.png"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",

@@ -11,10 +11,21 @@ html {
     ));
 }
 
-body {
-  background: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
+:root {
+  --custom-surface: #242A32; // slightly lighter than your neutral
+  --custom-page-background: #181F29;
+  --hero-base: #1B2636;;
+}
 
+main {
+  background: linear-gradient(
+    to bottom,
+    var(--hero-base) 0%,
+    var(--custom-page-background) 50%
+  );
+}
+body {
+  color: var(--mat-sys-on-surface);
 }
 
 
@@ -35,14 +46,6 @@ mat-sidenav-content {
   -webkit-overflow-scrolling: touch; // enables smooth scroll on iOS
 }
 
-mat-card{
-  background-color: var(--custom-surface);
-  color: var(--mat-sys-on-surface);
-}
-
-:root {
-  --custom-surface: #1F2224; // slightly lighter than your neutral
-}
 
 .page-title {
   margin-bottom: 1rem;

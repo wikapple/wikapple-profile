@@ -10,6 +10,10 @@
   padding: 2rem;
   background-color: var(--custom-surface); // fallback for dark theme
   color: var(--mat-sys-on-surface);
+
+  @media (max-width: 768px) {
+    background-color: transparent;
+  }
 }
 
 .about-content {
