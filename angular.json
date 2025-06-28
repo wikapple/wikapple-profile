@@ -31,7 +31,8 @@
                 "input": "public"
               },
               "src/assets",
-              "src/favicon_with_bg.ico"
+              "src/favicon_with_bg.ico",
+              "src/circuit-icon.png"
             ],
             "styles": [
               "src/styles.scss",
@@ -107,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

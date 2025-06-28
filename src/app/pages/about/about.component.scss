@@ -8,8 +8,8 @@
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease-out forwards;
   padding: 2rem;
-  background-color: var(--surface-color, #2d3130); // fallback for dark theme
-  color: var(--text-color, #f4fff7);
+  background-color: var(--custom-surface); // fallback for dark theme
+  color: var(--mat-sys-on-surface);
 }
 
 .about-content {
