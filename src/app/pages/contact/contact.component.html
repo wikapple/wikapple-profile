@@ -30,17 +30,27 @@
             <fieldset [disabled]="submittingForm">
                 <mat-form-field appearance="outline">
                     <mat-label>Name</mat-label>
-                    <input matInput formControlName="name" required />
+                    <input matInput formControlName="name" required maxlength="200" />
+                    <mat-error *ngIf="contactForm.get('name')?.hasError('maxlength')">
+                        Name is too long.
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input matInput formControlName="email" required type="email" />
+                    <input matInput formControlName="email" required type="email" maxlength="254" />
+                    <mat-error *ngIf="contactForm.get('email')?.hasError('maxlength')">
+                        Email is too long.
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Message</mat-label>
-                    <textarea matInput formControlName="message" rows="5" required></textarea>
+                    <textarea matInput formControlName="message" rows="5" required maxlength="3000"></textarea>
+                     <mat-hint align="end">{{ contactForm.get('message')?.value?.length || 0 }} / 3000</mat-hint>
+                    <mat-error *ngIf="contactForm.get('message')?.hasError('maxlength')">
+                        Message is too long.
+                    </mat-error>
                 </mat-form-field>
 
                 <button mat-flat-button color="primary" type="submit" [disabled]="!contactForm.valid || submittingForm">
@@ -54,7 +64,7 @@
         @else {
         <div class="thank-you-message"><i class="fa-solid fa-square-check"></i>
             <p>
-                Your message was sent successfully. Thank you! I’ll be in touch as soon as possible.
+                Your message was sent successfully. Thank you for reaching out! I’ll be in touch as soon as possible.
             </p>
         </div>
         }

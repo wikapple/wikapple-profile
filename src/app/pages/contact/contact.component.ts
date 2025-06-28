@@ -1,6 +1,11 @@
 import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  Validators,
+  FormGroup,
+} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,13 +22,12 @@ import { CanComponentDeactivate } from '../../_guards/pending-changes.guard';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
 })
 export class ContactComponent implements CanComponentDeactivate {
-
   contactForm: FormGroup;
   private readonly contactService: ContactService = inject(ContactService);
   private readonly toastr = inject(ToastrService);
@@ -32,15 +36,20 @@ export class ContactComponent implements CanComponentDeactivate {
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required],
+      name: ['', [Validators.required, Validators.maxLength(200)]],
+      email: [
+        '',
+        [Validators.required, Validators.email, Validators.maxLength(254)],
+      ],
+      message: ['', [Validators.required, Validators.maxLength(3000)]],
     });
   }
 
-  
   canDeactivate(): boolean {
-    return !this.submittingForm || confirm('The form is submitting. Are you sure you want to leave?');
+    return (
+      !this.submittingForm ||
+      confirm('The form is submitting. Are you sure you want to leave?')
+    );
   }
 
   @HostListener('window:beforeunload', ['$event'])
@@ -54,21 +63,20 @@ export class ContactComponent implements CanComponentDeactivate {
     this.submittingForm = true;
     if (this.contactForm.valid) {
       const message = this.contactForm.value;
-      console.log('📩 Form submission:', message);
 
       this.contactService.submitContactForm(message).subscribe({
-        next: _ => {
-          this.toastr.success('Thanks for reaching out!');
+        next: (_) => {
           this.contactForm.reset();
           this.submittingForm = false;
-          this.submittedSuccessfully = true; 
+          this.submittedSuccessfully = true;
         },
-        error: error => {
+        error: (error) => {
           this.submittingForm = false;
-          this.toastr.error("An error occurred while sending request");
-        }
+          this.toastr.error(
+            'Oops! An error occurred while sending the contact request.'
+          );
+        },
       });
-
     }
   }
 }
