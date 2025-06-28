@@ -5,6 +5,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { WorkComponent } from './pages/work/work.component';
 import { EducationComponent } from './pages/education/education.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { PendingChangesGuard } from './_guards/pending-changes.guard';
 
 /*
 About
@@ -20,6 +21,6 @@ export const routes: Routes = [
     {path: 'projects', component: ProjectsComponent},
     {path: 'work', component: WorkComponent},
     {path: 'education', component: EducationComponent},
-    {path: 'contact', component: ContactComponent},
+    {path: 'contact', component: ContactComponent, canDeactivate: [PendingChangesGuard]},
     {path: '**', component: HeroComponent, pathMatch: 'full'}
 ];
