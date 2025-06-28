@@ -1,22 +1,31 @@
 @use '@angular/material' as mat;
-@use '../dark_theme-colors' as my-theme; // location of generated file
-@include mat.all-component-typographies();
-@include mat.core();
+@use '../_theme-colors' as theme; // location of generated file
 
+// 1. Define the theme as a variable
 html {
   color-scheme: dark;
-  @include mat.theme((color: (primary: my-theme.$primary-palette,
-        tertiary: my-theme.$tertiary-palette ),
-      typography: (plain-family: Nunito Sans,
-        brand-family: Inter,
-      ),
-      density: 0));
+  @include mat.theme((color: (primary: theme.$primary-palette,
+        tertiary: theme.$tertiary-palette ),
+      typography: (plain-family: Nunito Sans, brand-family: Inter),
+      density: 0
+    ));
 }
 
-body {
-  background: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
+:root {
+  --custom-surface: #242A32; // slightly lighter than your neutral
+  --custom-page-background: #181F29;
+  --hero-base: #1B2636;;
+}
 
+main {
+  background: linear-gradient(
+    to bottom,
+    var(--hero-base) 0%,
+    var(--custom-page-background) 50%
+  );
+}
+body {
+  color: var(--mat-sys-on-surface);
 }
 
 
@@ -36,6 +45,7 @@ mat-sidenav-content {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; // enables smooth scroll on iOS
 }
+
 
 .page-title {
   margin-bottom: 1rem;

@@ -30,8 +30,7 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/assets",
-              "src/favicon_with_bg.ico"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
@@ -107,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
