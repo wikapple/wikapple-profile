@@ -1,27 +1,37 @@
 <div class="about-container">
-<h2 class="page-title mat-headline-large">About</h2>
+  <h1 class="page-title mat-headline-large">About</h1>
 
-<mat-card class="about-card">
-  <div class="about-content">
-    <div class="text-content">
-      <h1>Hi, I'm Kris Applegate</h1>
-      <p>
-        I'm a software engineer with a background in aviation and aircraft load planning. I build elegant, reliable software that helps complex systems work simply and safely.
-      </p>
-      <p>
-        With experience in both operational aviation and modern web development, I bring a unique perspective to problem solving, system design, and performance optimization.
-      </p>
+  <mat-card class="about-card">
+    <div class="about-content">
+      <div class="text-content">
+        <h2>Hi, I'm Kris Applegate</h2>
+        <p>
+          I'm a software engineer with a background in law enforcement. I build
+          reliable, elegant software designed for complex, mission-critical environments.
+        </p>
+        <p>
+          My time in tactical operations and ceremonial units taught me discipline, work ethic, and the
+          importance of team work. Today, I bring that mindset to engineering scalable web applications
+          with thoughtful design and efficient data flow.
+        </p>
 
-      <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
 
-      <p class="core-focus"><strong>Core Focus:</strong> Angular • TypeScript • Load Optimization • UI Design • Systems Thinking</p>
+        <p class="core-focus"><strong>Core Focus:</strong> Angular • TypeScript • .NET • C# • SQL Server • UI Design •
+          Systems Thinking</p>
+        <div class="link-button-area">
+          <button mat-flat-button color="primary" routerLink="/projects">
+            View My Work
+          </button>
+        </div>
+      </div>
 
-      <button mat-flat-button color="primary" routerLink="/projects">
-        View My Work
-      </button>
+      <div class="image-stack">
+        <img src="assets/HonorGuard.JPG" alt="Kris Applegate Honor Guard" class="profile-img honor"
+          (click)="openImage('assets/HonorGuard.JPG')" cursor="pointer" />
+        <img src="assets/TRT.JPG" alt="Kris Applegate Tactical" class="profile-img swat"
+          (click)="openImage('assets/TRT.JPG')" cursor="pointer" />
+      </div>
     </div>
-
-    <img src="assets/IMG_7855.JPG" alt="Kris Applegate" class="profile-pic" />
-  </div>
-</mat-card>
+  </mat-card>
 </div>

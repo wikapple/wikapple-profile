@@ -28,12 +28,12 @@ body {
   color: var(--mat-sys-on-surface);
 }
 
-
 html,
 body {
   height: 100%;
   overflow-x: hidden;
   overscroll-behavior: none;
+  
 }
 
 body {
@@ -55,4 +55,9 @@ mat-sidenav-content {
   @media (min-width: 768px) {
     text-align: left;
   }
+}
+
+p {
+  font-size: 1.3rem;
+  line-height: 1.5;
 }
