@@ -43,7 +43,7 @@ export class ProjectsComponent implements OnInit {
       githubRepositories: [
         {
           name: 'Angular UI',
-          url: 'https://github.com/wikapple/library-management-system',
+          url: 'https://github.com/wikapple/wikapple-profile',
         },
         {
           name: '.NET Azure Function App',

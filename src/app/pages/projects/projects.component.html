@@ -16,7 +16,7 @@
         <div class="project-links" *ngIf="project.githubRepositories || project.liveDemoUrl">
           @if (project.githubRepositories) {
           @for (repo of project.githubRepositories; track repo.name){
-          <a href="repo.url" target="_blank"><button mat-stroked-button color="primary"><i
+          <a href="{{repo.url}}" target="_blank"><button mat-stroked-button color="primary"><i
                 class="fa-brands fa-github"></i> {{repo.name}}</button></a>
           }
           }
