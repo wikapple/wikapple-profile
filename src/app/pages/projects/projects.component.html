@@ -1,5 +1,5 @@
 <div class="projects-container">
-    <h2 class="page-title mat-headline-large">Projects</h2>
+  <h2 class="page-title mat-headline-large">Projects</h2>
 
   <div class="project-grid">
     <mat-card *ngFor="let project of projects" class="project-card">
@@ -7,16 +7,19 @@
       <mat-card-content>
         <p>{{ project.description }}</p>
         @if (project.imgUrl != null) {
-          <img mat-card-image class="card-img" src="{{project.imgUrl}}" alt="image of {{project.title}} project">
+        <img mat-card-image class="card-img" src="{{project.imgUrl}}" alt="image of {{project.title}} project"
+          (click)="isMobile ? null : openImage(project.imgUrl)" [style.cursor]="isMobile ? 'default' : 'pointer'">
         }
         <mat-chip-listbox>
           <mat-chip *ngFor="let tech of project.technologies">{{ tech }}</mat-chip>
         </mat-chip-listbox>
-
-        <div class="project-links" *ngIf="project.githubUrl || project.liveDemoUrl">
-          <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank">
-            <button mat-stroked-button color="primary">GitHub</button>
-          </a>
+        <div class="project-links" *ngIf="project.githubRepositories || project.liveDemoUrl">
+          @if (project.githubRepositories) {
+          @for (repo of project.githubRepositories; track repo.name){
+          <a href="repo.url" target="_blank"><button mat-stroked-button color="primary"><i
+                class="fa-brands fa-github"></i> {{repo.name}}</button></a>
+          }
+          }
           <a *ngIf="project.liveDemoUrl" [href]="project.liveDemoUrl" target="_blank">
             <button mat-stroked-button color="accent">Live Demo</button>
           </a>
