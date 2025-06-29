@@ -2,7 +2,12 @@ export interface ProjectSummary {
   title: string;
   description: string;
   technologies: string[];
-  githubUrl?: string;
+  githubRepositories?: GithubRepository[];
   liveDemoUrl?: string;
   imgUrl? :string;
+}
+
+export interface GithubRepository {
+  name: string;
+  url: string;
 }

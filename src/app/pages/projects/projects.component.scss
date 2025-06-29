@@ -3,7 +3,10 @@
   margin: 0 auto;
 }
 .card-img {
-  background-size: cover;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover; // crops image to fill space
+  border-radius: 12px;
 }
 .project-grid {
   display: grid;
