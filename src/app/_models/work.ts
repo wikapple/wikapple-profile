@@ -1,7 +1,12 @@
 export interface Work {
-    title: string;
+    jobRoles: JobRole[];
     company: string;
     duration: string;
-    description: string;
-    technologies: string[];
+    bullets: string[];
+    skills: string[];
+}
+
+export interface JobRole {
+    title: string;
+    duration: string;
 }

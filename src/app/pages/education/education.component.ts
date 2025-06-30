@@ -19,20 +19,6 @@ export class EducationComponent {
 
   educationHistory : Education[] = [
     {
-      degree: 'M.S. student in Computer Science',
-      institution: 'University of Louisville',
-      duration: '2025 – current',
-      summary: `Computer Science program focused on theory and modern software development.`,
-      highlights: ['Discrete Systems']
-    },
-    {
-      degree: 'AZ-900',
-      institution: 'Microsoft',
-      duration: '2024',
-      summary: `Azure Fundamentals`,
-      highlights: ['Cloud Development']
-    },
-    {
       degree: 'B.S. in Business Informatics',
       institution: 'Indiana University Southeast',
       duration: '2020 – 2024',

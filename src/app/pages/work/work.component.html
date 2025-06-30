@@ -2,55 +2,24 @@
   <h1 class="page-title mat-headline-large">Work</h1>
 
   <div class="work-grid">
-    <mat-card class="work-card">
-      <mat-card-title>UPS</mat-card-title>
-      <mat-card-subtitle>May 2023 – Present</mat-card-subtitle>
-      <mat-card-content>
-        <strong>Software Engineer II (2025 – Present)</strong>
-        <ul>
-          <li>Worked with team to deploy an application using machine learning to optimize aircraft load planning and weight distribution.</li>
-        </ul>
-        <strong>Software Engineer I (2024 - 2025)</strong>
-        <ul>
-          <li>Led efforts to upgrade vender software versions and document the upgrade process.</li>
-          <li>Helped to migrate legacy applications to Angular and .NET.</li>
-        </ul>
-        <strong>App Dev Co-op (2023 - 2024)</strong>
-        <ul>
-          <li>Collaborated with team members and third party vender to integrate communication technologies into our web applications, giving users the ability to communicate across different gateways.</li>
-          <li>Assisted in developing a lightweight .NET Maui app to retrieve device phone numbers from UPS Android devices.</li>
-        </ul>
-        <strong>App Dev Intern (2023)</strong>
-        <ul>
-          <li>Shadowed the application development team responsible for Aircraft Load Planning applications.</li>
-          <li>Assigned small tasks and fixed bugs </li>
-          <li>Our five person team won the 2023 UPS Hackathon. We created a Flutter mobile that integrated with Azure Custom Vision to give packaging recommendations to customers</li>
-        </ul>
-        <mat-chip-listbox>
-          <mat-chip>Angular</mat-chip>
-          <mat-chip>C#</mat-chip>
-          <mat-chip>.NET</mat-chip>
-          <mat-chip>SQL Server</mat-chip>
-          <mat-chip>Azure Devops</mat-chip>
-          <mat-chip>OpenShift</mat-chip>
-          <mat-chip>SAFe (Scaled Agile Framework)</mat-chip>
-        </mat-chip-listbox>
-      </mat-card-content>
-    </mat-card>
 
-    <mat-card *ngFor="let job of workHistory" class="work-card">
-      <mat-card-title>{{ job.company }}</mat-card-title>
-      <mat-card-subtitle>{{ job.duration }}</mat-card-subtitle>
-      <mat-card-content>
-        <strong>{{job.title}}</strong>
-        <ul>
-          <li>{{ job.description }}</li>
-        </ul>
-
-        <mat-chip-listbox>
-          <mat-chip *ngFor="let tech of job.technologies">{{ tech }}</mat-chip>
-        </mat-chip-listbox>
-      </mat-card-content>
-    </mat-card>
+    @for (work of workHistory; track $index){
+      <mat-card class="work-card">
+        <mat-card-title class="work-card-title">{{work.company}}</mat-card-title>
+        <mat-card-subtitle class="work-card-subtitle">
+          {{work.duration}}
+        </mat-card-subtitle>
+        <mat-card-content>
+          @for (role of work.jobRoles; track $index) {
+              <div class="role-list"><strong>{{role.title}} </strong> @if(work.jobRoles.length > 1){ <span class="job-role-duration">({{role.duration}})</span>}</div>
+          }
+          <ul>
+            @for (bullet of work.bullets; track $index) {
+              <li>{{bullet}}</li>
+            }
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    }
   </div>
 </div>
