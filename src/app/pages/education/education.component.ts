@@ -22,7 +22,7 @@ export class EducationComponent {
       degree: 'B.S. in Business Informatics',
       institution: 'Indiana University Southeast',
       duration: '2020 – 2024',
-      summary: `Dual-focused program with a blend of software development and business knowlede.`,
+      summary: `Dual-focused program with a blend of software development and business knowledge.`,
       highlights: ['Data Structures & Algorithims', 'Database Systems', 'Mobile Development', 'Web Development', 'Data Science', 'System Design', 'Project Management']
     },
     {
