@@ -22,15 +22,15 @@ export class EducationComponent {
       degree: 'B.S. in Business Informatics',
       institution: 'Indiana University Southeast',
       duration: '2020 – 2024',
-      summary: `Dual-focused program with a blend of software development and business knowlede.`,
-      highlights: ['Data Structures & Algorithims', 'Database Systems', 'Mobile Development', 'Web Development', 'Data Science', 'System Design', 'Project Management']
+      summary: `The study of how information is used and managed. It involved understanding how technology can be used to solve problems and improve lives.`,
+      highlights: ['Human Computer Interaction', 'Operations Managment', 'Financial Management', 'Data Representation Organization (Java)', 'Database Systems (Oracle)', 'Mobile Application Development (Flutter)', 'Intro to Statistical Learning With R', 'Cloud Computing for Data Science (Python)', 'Web Design and Development (HTML,CSS,JavaScript,PHP)', 'System Design', 'Project Management']
     },
     {
       degree: 'Political Science',
       institution: 'Indiana University Southeast',
       duration: '2009 - 2020',
-      summary: `Study of Government and modern political theory. Focus on American Government and Internationl Political Economy.`,
-      highlights: ['International Poltical Economy', 'American Government', 'Constitutional Rights & Civil Liberties']
+      summary: `Study of Government and modern political theory. Focus on United States Case Law and Internationl Political Economy.`,
+      highlights: ['Constitutional Rights and Liberties','Policy Making in the U.S.','Contemporary Political Philosophy','Constitutional Law','International Political Economy','Analyzing Politics','United States Foreign Policy']
     }
   ];
 }
