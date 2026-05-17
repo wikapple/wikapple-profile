@@ -15,6 +15,10 @@ export class WorkComponent {
     {
       jobRoles: [
         {
+          title: "Senior Software Development Engineer",
+          duration: "2026 - Present"
+        },
+        {
           title: 'Software Development Engineer II',
           duration: '2025 - Present',
         },
